@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Delete Company{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1>Delete Company</h1>
+    <p>Delete "{{ object.company_name }}"?</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+    </form>
+
+    <p><a href="{% url 'company-list' %}">Cancel</a></p>
+</div>
+{% endblock %}

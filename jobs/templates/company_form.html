@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}{% if form.instance.pk %}Update Company{% else %}Add Company{% endif %}{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1>{% if form.instance.pk %}Update Company{% else %}Add Company{% endif %}</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save Company</button>
+    </form>
+
+    <p><a href="{% url 'company-list' %}">Cancel</a></p>
+</div>
+{% endblock %}

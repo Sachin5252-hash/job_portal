@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Company List{% endblock %}
+
+{% block content %}
+
+<h1>Companies</h1>
+
+{% if user.is_authenticated %}
+    <p><a href="{% url 'company-create' %}">Add a company</a></p>
+{% endif %}
+
+{% if companies %}
+    <ul>
+        {% for company in companies %}
+            <li>
+                <strong>{{ company.company_name }}</strong>
+                {% if company.location %} — {{ company.location }}{% endif %}
+                {% if company.website %}
+                    — <a href="{{ company.website }}" target="_blank" rel="noopener">Website</a>
+                {% endif %}
+                {% if company.description %}<p>{{ company.description }}</p>{% endif %}
+
+                {% if user == company.created_by %}
+                    <a href="{% url 'company-update' company.pk %}">Edit</a>
+                    <a href="{% url 'company-delete' company.pk %}">Delete</a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No companies have been added yet.</p>
+{% endif %}
+
+{% endblock %}

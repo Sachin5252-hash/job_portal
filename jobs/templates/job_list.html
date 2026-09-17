@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+
+{% block title %}Job Listings{% endblock %}
+
+{% block content %}
+
+<h1>Job Listings</h1>
+
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th,
+    td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    th a {
+        text-decoration: none;
+        color: black;
+    }
+
+    th a:hover {
+        color: blue;
+    }
+
+    tr:hover {
+        background-color: #f9f9f9;
+    }
+
+    td a {
+        text-decoration: none;
+    }
+</style>
+
+<table>
+
+    <thead>
+        <tr>
+<th>
+    <a href="?sort={% if current_sort == 'title' %}-title{% else %}title{% endif %}">
+        Job Title ↕
+    </a>
+</th>
+
+<th>
+    <a href="?sort={% if current_sort == 'company_name' %}-company_name{% else %}company_name{% endif %}">
+        Company ↕
+    </a>
+</th>
+
+<th>
+    <a href="?sort={% if current_sort == 'location' %}-location{% else %}location{% endif %}">
+        Location ↕
+    </a>
+</th>
+
+<th>
+    <a href="?sort={% if current_sort == 'salary' %}-salary{% else %}salary{% endif %}">
+        Salary ↕
+    </a>
+</th>
+
+<th>
+    <a href="?sort={% if current_sort == 'notice_period' %}-notice_period{% else %}notice_period{% endif %}">
+        Notice Period ↕
+    </a>
+</th>
+
+<th>
+    <a href="?sort={% if current_sort == 'date_posted' %}-date_posted{% else %}date_posted{% endif %}">
+        Date Posted ↕
+    </a>
+</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        {% for job in all_jobs %}
+
+        <tr>
+
+            <td>
+                <a href="{% url 'job-detail' job.pk %}">
+                    {{ job.title }}
+                </a>
+            </td>
+
+            <td>
+                {{ job.company_name }}
+            </td>
+
+            <td>
+                {{ job.location }}
+            </td>
+
+            <td>
+                ${{ job.salary }}
+            </td>
+
+            <td>
+                {{ job.notice_period }}
+            </td>
+
+            <td>
+                {{ job.date_posted|date:"d M Y" }}
+            </td>
+
+        </tr>
+
+        {% empty %}
+
+        <tr>
+            <td colspan="6">
+                No jobs posted yet.
+            </td>
+        </tr>
+
+        {% endfor %}
+
+    </tbody>
+
+</table>
+
+{% endblock %}

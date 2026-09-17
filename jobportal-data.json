@@ -1,0 +1,72 @@
+[
+{
+  "model": "accounts.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$T0GKl2Mcl0yFHrPwEPdqZ2$9RQSOdseVVI5TL3NDAUxsBjHdammMVwvzVAKSLwLna8=",
+    "last_login": "2026-09-12T10:51:25.216Z",
+    "is_superuser": false,
+    "username": "sachin",
+    "first_name": "",
+    "last_name": "",
+    "email": "sachinparashar502@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-09-12T10:51:13.515Z",
+    "role": "seeker",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$RSsM9TygU391rVs1uIDoi8$Dx3E6m6/5IHk6Ws1/Kl0OlmTYHrxW5ekYgEITm4pHGc=",
+    "last_login": "2026-09-12T12:24:47.998Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-09-12T12:24:31.153Z",
+    "role": "seeker",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$V9qpiqovHaPPD8EA4sWtEw$36F64NthenRjRGZwqWxLLT6h9EGEjBn+hENF3m9OMxs=",
+    "last_login": null,
+    "is_superuser": true,
+    "username": "user",
+    "first_name": "",
+    "last_name": "",
+    "email": "user@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-09-12T12:50:14.340Z",
+    "role": "seeker",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jobs.job",
+  "pk": 1,
+  "fields": {
+    "title": "sodjd",
+    "company_name": "ddsdsds",
+    "description": "fwefweewf",
+    "location": "dsvcfwef",
+    "salary": "23324.00",
+    "posted_by": [
+      "sachin"
+    ],
+    "date_posted": "2026-09-12",
+    "notice_period": "3421221"
+  }
+}
+]
